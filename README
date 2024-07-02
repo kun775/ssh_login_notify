@@ -1,1 +1,9 @@
-curl -s -o /etc/profile.d/ssh2tg.sh https://raw.githubusercontent.com/3377/ssh2tg/main/ssh2tg.sh && chmod +x /etc/profile.d/ssh2tg.sh && sed -i 's/replacetoken/替换为你的tg机器人token/g;s/replaceid/替换为你的tg用户ID/g' /etc/profile.d/ssh2tg.sh
+## 1、通过Telegram Bot通知
+```shell
+curl -s -o /etc/profile.d/ssh2tg.sh https://raw.githubusercontent.com/kun775/ssh_login_notify/main/ssh2tg.sh && chmod +x /etc/profile.d/ssh2tg.sh && sed -i 's/replacetoken/替换为你的tg机器人token/g;s/replaceid/替换为你的tg用户ID/g' /etc/profile.d/ssh2tg.sh
+```
+
+## 2、通过Bark通知
+``shell
+curl -s -o /etc/profile.d/bark.sh https://raw.githubusercontent.com/kun775/ssh_login_notify/main/bark.sh && chmod +x /etc/profile.d/bark.sh && sed -i 's/replaceapi/替换成你的barkapi地址/g' /etc/profile.d/bark.sh
+```
