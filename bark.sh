@@ -25,11 +25,6 @@ TIME=$(date +"%Y年%m月%d日 %H:%M:%S")
  USERNAME=$(whoami)
  HOSTNAME=$(hostname)
 # 发送Telegram消息
-MESSAGE="ℹ️ 登录信息：
-登录机器：$HOSTNAME
-登录名：$USERNAME
-登录IP：$IP            
-登录时间：$TIME
-登录地区：$LOCATION"
+MESSAGE="登录机器：${HOSTNAME}%0a登录名：${USERNAME}%0a登录IP：${IP}%0a登录地区：${LOCATION}%0a登录时间：${TIME}"
 
-curl "$BAKR_API/$MESSAGE?group=SSH_Login\&sound\=choo" &
+curl -s ${BAKR_API}/SSH登录通知/"${MESSAGE// /%20}"?group=SSH_Login\&sound=choo >> /root/ssh_login.log 2>&1 &
